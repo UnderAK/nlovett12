@@ -1,5 +1,5 @@
 - hi
-- i’m @nlovett12
+- i’m noah
 - i’m interested in py & game dev
 - i’m currently learning java
 - i’m looking to collaborate on games (maybe)
