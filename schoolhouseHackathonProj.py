@@ -38,10 +38,10 @@ while True:
     #gets which keys are pressed
     keys = pygame.key.get_pressed()
     #if WASD is pressed & not colliding w/ border, update player location by playerSpeed
-    if keys[pygame.K_a] and player.left > onScreen.left:
+    if keys[pygame.K_a] and player.left >= onScreen.left:
         #move left
         location[0] -= playerSpeed
-    if keys[pygame.K_d] and player.right < onScreen.right:
+    if keys[pygame.K_d] and player.right <= onScreen.right:
         #move right
         location[0] += playerSpeed
     if keys[pygame.K_SPACE] and not isJumping:
@@ -57,13 +57,8 @@ while True:
             jumpCount = 0  # Reset jump count
     location[1] -= jumpCount  # Move player up
     #screen lims
-    if player.left < onScreen.left:
-        location[0] = onScreen.left
-    if player.right > onScreen.right:
-        location[0] = onScreen.right - player.width
     if player.bottom > onScreen.bottom:
         location[1] = onScreen.bottom - player.height
     #update frame
     pygame.time.delay(50)
     pygame.display.update()
-    
